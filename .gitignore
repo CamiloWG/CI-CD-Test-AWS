@@ -1,0 +1,15 @@
+# Archivos de Python
+*.pyc
+*.pyo
+*.pyd
+
+# Caché y entornos virtuales
+__pycache__/
+*/__pycache__/
+env/
+
+
+
+# Archivos de configuración
+*.log
+.DS_Store
