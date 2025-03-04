@@ -1,3 +1,4 @@
+# This is a basic workflow to help you get started with Actions
 
 name: CI
 
@@ -5,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -45,8 +46,8 @@ jobs:
           pip install -r requirements.txt
       - name: Run Tests
         run: |
-          pytest
-     - name: Configure AWS Credentials
+          pytest 
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -55,3 +56,5 @@ jobs:
             aws-region: us-east-1
       - name: List buckets
         run: aws s3 ls
+        
+  
